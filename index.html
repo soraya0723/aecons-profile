@@ -7,75 +7,175 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    body {
+    /* === RESET === */
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* === BASE === */
+    body {
       font-family: 'Inter', sans-serif;
-      background: url("asset/bg.jpg") no-repeat center center fixed;
-     background-size: cover;
+      background: #ffffff url("asset/bg.jpg") no-repeat center center;
+      background-size: contain; /* keep full floor plan visible */
+      background-attachment: fixed;
+      background-position: center center;
+      background-repeat: no-repeat;
       color: #000;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
       min-height: 100vh;
       text-align: center;
       padding: 20px;
     }
+
+    /* === CONTENT === */
     .logo {
       width: 140px;
       height: 140px;
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 20px;
+      background-color: #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
+
     h1 {
-      font-size: 24px;
+      font-size: 2rem;
       font-weight: 700;
-      margin: 0;
+      margin-bottom: 10px;
+      text-shadow: 0 1px 3px rgba(255,255,255,0.9);
     }
+
     .tagline {
       font-style: italic;
-      margin: 10px 0 20px;
-      font-size: 16px;
-    }
-    .contact {
-      font-size: 16px;
       margin-bottom: 20px;
+      font-size: 1.1rem;
+      color: #333;
     }
+
+    .contact {
+      font-size: 1rem;
+      margin-bottom: 25px;
+      line-height: 1.6;
+      background: rgba(255,255,255,0.7);
+      padding: 10px 20px;
+      border-radius: 10px;
+      backdrop-filter: blur(3px);
+    }
+
     .contact a {
       color: #565252;
       text-decoration: none;
+      transition: color 0.2s;
     }
+
+    .contact a:hover {
+      color: #000;
+    }
+
     .icons {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 25px;
+      flex-wrap: wrap;
       margin-top: 20px;
     }
+
     .icons a {
-      font-size: 28px;
+      font-size: 1.8rem;
       color: #4f4a4a;
       text-decoration: none;
-      transition: color 0.2s ease-in-out;
-    }
-    .icons a:hover {
-      color: #1d1621;
-    }
-    .hero-swiper {
-    background: url("assets/viber_image_2025-08-13_09-06-08-970.jpg") no-repeat center center;
-    background-size: cover;
+      transition: color 0.3s ease;
     }
 
+    .icons a:hover {
+      color: #111;
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 1024px) {
+      body {
+        background-size: contain; /* maintain full floor plan */
+        background-attachment: scroll;
+      }
+      .logo {
+        width: 120px;
+        height: 120px;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      .tagline {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        background-size: contain;
+        background-position: center center;
+        background-attachment: scroll;
+        background-repeat: no-repeat;
+        padding: 30px 15px;
+      }
+      .logo {
+        width: 110px;
+        height: 110px;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      .tagline {
+        font-size: 0.95rem;
+      }
+      .contact {
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        background-size: contain;
+        background-position: center center;
+        background-attachment: scroll;
+        background-repeat: no-repeat;
+        background-color: #fff;
+        min-height: 100vh;
+        padding: 25px 10px;
+      }
+      .logo {
+        width: 90px;
+        height: 90px;
+      }
+      h1 {
+        font-size: 1.4rem;
+      }
+      .tagline {
+        font-size: 0.9rem;
+      }
+      .contact {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+      }
+      .icons a {
+        font-size: 1.5rem;
+      }
+    }
   </style>
 </head>
+
 <body>
   <img src="asset/LOGO AECONS.svg" alt="AECONS Logo" class="logo" />
-  
+
   <h1>AECONS DESIGN AND BUILD</h1>
   <div class="tagline">"Advancing excellence in construction."</div>
 
   <div class="contact">
-    <p>CONTACT US:</p>
+    <p><strong>CONTACT US:</strong></p>
     <p><a href="mailto:aecons.ph@gmail.com">aecons.ph@gmail.com</a></p>
     <p><a href="tel:09152075951">0915 2075 951</a></p>
     <p><a href="tel:82311272">8231-1272</a></p>
